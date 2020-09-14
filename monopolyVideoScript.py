@@ -112,7 +112,7 @@ def loop():
 		last_state4 = input_state4
 
 def main():
-	videos()
+	loop()
 
 if __name__ == '__main__':
     main()
