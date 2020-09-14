@@ -11,6 +11,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # Define Video Locations
 movie1 = ("/home/pi/Monopoly/movie1.mp4")
@@ -36,6 +38,8 @@ while True:
 	#Read states of inputs
 	input_state1 = GPIO.input(17)
 	input_state2 = GPIO.input(18)
+	input_state3 = GPIO.input(27)
+	input_state4 = GPIO.input(22)
 	quite_video = GPIO.input(24)
 
 	#If GPIO(17) is shorted to ground
@@ -58,7 +62,7 @@ while True:
 			omxc = Popen(['omxplayer', '-b', movie2])
 			player = True
 			
-	#If GPIO(19) is shorted to ground
+	#If GPIO(27) is shorted to ground
 	elif input_state3 != last_state3:
 		if (player and not input_state3):
 			os.system('killall omxplayer.bin')
@@ -69,7 +73,7 @@ while True:
 			player = True
 			
 			
-	#If GPIO(20) is shorted to ground		
+	#If GPIO(22) is shorted to ground		
 	elif input_state4 != last_state4:
 		if (player and not input_state4):
 			os.system('killall omxplayer.bin')
