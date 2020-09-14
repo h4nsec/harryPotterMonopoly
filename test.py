@@ -4,6 +4,6 @@ import os
 import sys
 
 def chance():
-  print(random.choice(os.listdir(/home/pi/Monopoly/Chance/")))
+  print(random.choice(os.listdir("/home/pi/Monopoly/Chance/")))
   
 chance()
