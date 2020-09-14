@@ -110,9 +110,3 @@ def loop():
 		last_state2 = input_state2 
 		last_state3 = input_state3
 		last_state4 = input_state4
-
-def main():
-	loop()
-
-if __name__ == '__main__':
-    main()
