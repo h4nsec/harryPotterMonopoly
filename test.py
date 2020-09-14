@@ -29,10 +29,12 @@ while True:
     	if (player and not input_state3):
         	os.system('killall omxplayer.bin')
                 omxc = Popen(['omxplayer', '-b', chance()])
+		print(chance())
                 player = True
         elif not input_state3:
         	omxc = Popen(['omxplayer', '-b', chance()])
                 player = True
+		print(chance() + "ELIF")
 
 
 last_state3 = input_state3           
