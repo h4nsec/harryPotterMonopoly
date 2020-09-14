@@ -2,8 +2,11 @@
 
 import os
 import sys
+import random
+
+chancePath = "/home/pi/Monopoly/Chance/"
 
 def chance():
-  print(random.choice(os.listdir("/home/pi/Monopoly/Chance/")))
+    print(chancePath + random.choice(os.listdir("/home/pi/Monopoly/Chance/")))
   
 chance()
