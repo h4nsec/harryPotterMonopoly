@@ -19,9 +19,14 @@ GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 # Define Video Locations
 movie1 = ("/home/pi/Monopoly/movie1.mp4")
 movie2 = ("/home/pi/Monopoly/movie2.mp4")
+
+chancePath = "/home/pi/Monopoly/Chance/"
 chanceFiles = os.listdir("/home/pi/Monopoly/Chance/")
 chance = random.choice(chanceFiles)
+
+
 chest = random.choice(os.listdir("/home/pi/Monopoly/Chest/"))
+
 
 # Set States
 last_state1 = True
@@ -70,10 +75,10 @@ while True:
 	elif input_state3 != last_state3:
 		if (player and not input_state3):
 			os.system('killall omxplayer.bin')
-			omxc = Popen(['omxplayer', '-b', chance])
+			omxc = Popen(['omxplayer', '-b', chancePath + chance])
 			player = True
 		elif not input_state3:
-			omxc = Popen(['omxplayer', '-b', chance])
+			omxc = Popen(['omxplayer', '-b', chancePath+ chance])
 			player = True
 			
 			
