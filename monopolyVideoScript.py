@@ -21,9 +21,9 @@ movie1 = ("/home/pi/Monopoly/movie1.mp4")
 movie2 = ("/home/pi/Monopoly/movie2.mp4")
 
 chancePath = "/home/pi/Monopoly/Chance/"
-chanceFiles = os.listdir("/home/pi/Monopoly/Chance/")
-chance = random.choice(chanceFiles)
 
+def chance()
+	chance = random.choice(os.listdir("/home/pi/Monopoly/Chance/"))
 
 chest = random.choice(os.listdir("/home/pi/Monopoly/Chest/"))
 
@@ -42,7 +42,7 @@ input_state4 = True
 quit_video = True
 player = False
 
-
+def loop()
 while True:
 	#Read states of inputs
 	input_state1 = GPIO.input(17)
@@ -110,3 +110,9 @@ while True:
 	last_state2 = input_state2 
 	last_state3 = input_state3
 	last_state4 = input_state4
+
+def main():
+    videos()
+
+if __name__ == '__main__':
+    main()
