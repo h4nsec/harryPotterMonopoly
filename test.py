@@ -27,6 +27,7 @@ while True:
     #If GPIO(27) is shorted to ground
     if input_state3 != last_state3:
 	chance()
+	print(chance())
 		if (player and not input_state3):
 			os.system('killall omxplayer.bin')
 			omxc = Popen(['omxplayer', '-b', chance()])
