@@ -1,8 +1,8 @@
 #! usr/bin/env python3
 
-import Rpi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import sys 
-import os from subprocess 
+import os
 import Popen
 
 
