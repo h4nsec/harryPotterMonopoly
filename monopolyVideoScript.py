@@ -1,9 +1,10 @@
 #! usr/bin/env python3
 
 import RPi.GPIO as GPIO
-import sys 
 import os
-import Popen
+import sys
+from subprocess import Popen
+import random
 
 
 
@@ -18,8 +19,8 @@ GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 # Define Video Locations
 movie1 = ("/home/pi/Monopoly/movie1.mp4")
 movie2 = ("/home/pi/Monopoly/movie2.mp4")
-chance = random.choice(os.listdir("/home/pi/Monopoly/Chance"))
-chest = random.choice(os.listdir("/home/pi/Monopoly/Chest"))
+chance = random.choice(os.listdir("/home/pi/Monopoly/Chance/"))
+chest = random.choice(os.listdir("/home/pi/Monopoly/Chest/"))
 
 # Set States
 last_state1 = True
@@ -33,6 +34,7 @@ input_state3 = True
 input_state4 = True
 
 quit_video = True
+player = False
 
 
 while True:
