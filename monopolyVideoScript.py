@@ -23,7 +23,7 @@ movie2 = ("/home/pi/Monopoly/movie2.mp4")
 chancePath = "/home/pi/Monopoly/Chance/"
 
 def chance():
-	random.choice(os.listdir("/home/pi/Monopoly/Chance/"))
+	chancePath + random.choice(os.listdir("/home/pi/Monopoly/Chance/"))
 
 chest = random.choice(os.listdir("/home/pi/Monopoly/Chest/"))
 
@@ -75,10 +75,10 @@ while True:
 	elif input_state3 != last_state3:
 		if (player and not input_state3):
 			os.system('killall omxplayer.bin')
-			omxc = Popen(['omxplayer', '-b', chancePath + str(chance())])
+			omxc = Popen(['omxplayer', '-b', chance())])
 			player = True
 		elif not input_state3:
-			omxc = Popen(['omxplayer', '-b', chancePath + str(chance())])
+			omxc = Popen(['omxplayer', '-b', chance())])
 			player = True
 				
 				
