@@ -14,12 +14,19 @@ GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 chancePath = "/home/pi/Monopoly/Chance/"
 
 def chance():
-	chancePath + random.choice(os.listdir("/home/pi/Monopoly/Chance/"))
+    files = os.listdir("/home/pi/Monopoly/Chance/")
+    chanceFile = random.choice(files)
+    print(chancePath + chanceFile)
+    return chancePath + chanceFile
+    
+    
+    'chancePath + print(str(random.choice(os.listdir("/home/pi/Monopoly/Chance/"))))'
 
 last_state3 = True
 input_state3 = True
 quit_video = True
 player = False
+
 
 while True:
     input_state3 = GPIO.input(27)
@@ -28,10 +35,10 @@ while True:
     if input_state3 != last_state3:
       if (player and not input_state3):
         os.system('killall omxplayer.bin')
-        omxc = Popen(['omxplayer', '-b', str(chance())])
+        omxc = Popen(['omxplayer', '-b', chance()])
         player = True
       elif not input_state3:
-        omxc = Popen(['omxplayer', '-b', str(chance())])
+        omxc = Popen(['omxplayer', '-b', chance()])
         player = True
-		
+        
 last_state3 = input_state3         
